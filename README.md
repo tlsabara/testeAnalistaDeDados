@@ -17,6 +17,10 @@ Vou ter um schema para os dados coletados e outro para os dados analisados. *O q
 
 ## Executando o projeto
 
+### Jujpyter - Faker - Mock Data
+
+Vou usar a lib Faker para popular os dados para 
+
 ### PostgreSQL - Origem
 
 ### PostgreSQL - Destino
