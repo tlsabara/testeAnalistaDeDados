@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+
+  # Este é o banco de dados SOURCE com os dados mockados
+  postgres_source_server:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_PASSWORD: senhasourcedb
+    ports:
+      - "10000:5432"
+    volumes:
+      - ./data_src:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  # Este é o banco de dados TARGET o qual irá conter os dados analisados
+  postgres_target_server:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_PASSWORD: senhatargetdb
+    ports:
+      - "11000:5432"
+    volumes:
+      - ./data_trg:/var/lib/postgresql/data
