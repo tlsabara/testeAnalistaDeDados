@@ -3,6 +3,7 @@ services:
 
   # Este é o banco de dados SOURCE com os dados mockados
   postgres_source_server:
+    restart: always
     image: postgres:15-alpine
     environment:
       POSTGRES_PASSWORD: senhasourcedb
@@ -14,6 +15,7 @@ services:
 
   # Este é o banco de dados TARGET o qual irá conter os dados analisados
   postgres_target_server:
+    restart: always
     image: postgres:15-alpine
     environment:
       POSTGRES_PASSWORD: senhatargetdb
