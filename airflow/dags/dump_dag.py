@@ -37,3 +37,14 @@ with DAG(
         timeout=20
     )
 
+    site_avaliable_pt2 = HttpSensor(
+        task_id="is_site_avaliable_2",
+        http_conn_id="url_test",
+        endpoint="api",
+        response_check=validate_http_sensor,
+        poke_interval=5,
+        timeout=20
+    )
+
+    # precedencia
+    site_avaliable >> site_avaliable_pt2
