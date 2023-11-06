@@ -3,6 +3,7 @@ services:
 
   # Este é o banco de dados SOURCE com os dados mockados
   postgres_source_server:
+
     restart: always
     image: postgres:15-alpine
     environment:
@@ -12,6 +13,9 @@ services:
     volumes:
       - ./data_src:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - test_analist
+
 
   # Este é o banco de dados TARGET o qual irá conter os dados analisados
   postgres_target_server:
@@ -23,3 +27,10 @@ services:
       - "11000:5432"
     volumes:
       - ./data_trg:/var/lib/postgresql/data
+    networks:
+      - test_analist
+
+networks:
+  test_analist:
+    name: test_analist
+    driver: bridge
