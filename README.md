@@ -17,9 +17,41 @@ Vou ter um schema para os dados coletados e outro para os dados analisados. *O q
 
 ## Executando o projeto
 
+### REQUISITOS:
+ - Docker
+ - Python (3.9+) 
+
+### Arquivo: **projeto.py**
+
+Este arquivo foi criado para facilitar a execução do projeto.
+
+1. Configurar email  para receber os avisos:
+   - O projeto precisa de um email apenas para receber os alertas e resultados dos processos de etl.
+   - na raiz do projeto execute: `python projeto.py --configurar`
+2. Rodando o projeto:
+   - Para executar o projeto execute: `python projeto.py --iniciar`
+   - Este comando irá criar os containers necessários para a execução.
+   - Para acessar o airflow e ver o pipeline acesse [localhost:8080](http://localhost:8080).
+   - Para acessar o banco de dados de ORIGEM:
+   ```shell
+   Servidor: localhost
+   Porta: 10000
+   Usuário: postgres
+   Senha: senhasourcedb
+   ```
+   - Para acessar o banco de dados de DESTINO:
+   ```shell
+   Servidor: localhost
+   Porta: 11000
+   Usuário: postgres
+   Senha: senhatargetdb
+   ```
+3. Parando o projeto:
+   - Após avaliar o projeto execute: ``
+
 ### Jujpyter - Faker - Mock Data
 
-Vou usar a lib Faker para popular os dados para 
+Vou usar a lib Faker para popular os dados no banco de origem
 
 ### PostgreSQL - Origem
 

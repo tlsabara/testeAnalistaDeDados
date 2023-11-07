@@ -1,0 +1,4 @@
+/airflow/logs/
+/docker_databases/data_src/
+/docker_databases/data_trg/
+**/.ipynb_checkpoints/
