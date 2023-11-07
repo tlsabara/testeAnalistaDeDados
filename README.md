@@ -1,7 +1,15 @@
-# testeAnalistaDeDados
+# Teste para analista de dados
 
 Este repositório armazena um pequeno projeto para uma entrevista de analise de dados.
 
+#### Indice
+
+- [Proposta](#proposta)
+- [Minha solução para o problema](#minha-solução)
+- [Como executar](#executando-o-projeto)
+- [Considerações](#considerações)
+
+### Proposta
 A proposta é bem simples:
 ![image](_assets/image/tarefa.png)
 
