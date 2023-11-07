@@ -3,18 +3,32 @@
 Este repositório armazena um pequeno projeto para uma entrevista de analise de dados.
 
 A proposta é bem simples:
-![image](https://github.com/tlsabara/testeAnalistaDeDados/assets/78706759/a03b389d-fcf3-4ece-8b3d-bfed859d699a)
+![image](./_assets/image/tarefa.png)
 
-### SOURCE DATA
-Vou criar um script em python para mockar os dados.
+- Realizar a migração dos dados entre SOURCE e TARGET
+- Utilizar Docker no Projeto
+- Python com alguma forma de agendamento
+- Enviar um relatório sumarizando os itens.
+  - Quantidade de pontos por usuário
+  - Quantidade de pontos por empresa
+  - 10 Usuários com mais pontos
+  - Média de marcações
 
-### ETL
-Com docker vou usar o apache airflow para orquestrar o job.
+---
+## Minha Solução
+### Jujpyter - Faker - Mock Data
+???
 
-### TARGET DATA
-Vou ter um schema para os dados coletados e outro para os dados analisados. *O que encaixa mais com os projetos de analise de dados que realizei*
+### PostgreSQL - Origem
+???
 
+### PostgreSQL - Destino
+???
 
+### Airflow
+????
+
+---
 ## Executando o projeto
 
 ### REQUISITOS:
@@ -49,20 +63,6 @@ Este arquivo foi criado para facilitar a execução do projeto.
 3. Parando o projeto:
    - Após avaliar o projeto execute: ``
 
-### Jujpyter - Faker - Mock Data
-
-Vou usar a lib Faker para popular os dados no banco de origem
-
-### PostgreSQL - Origem
-
-### PostgreSQL - Destino
-
-### Airflow
-
-O Apache Airflow vai ser o nosso orquestrador no projeto.
-
-1. acesse a pasta: `cd ./airflow`
-2. Inicie a configuração dos bancos de dados: `docker compose down --volumes --rmi all`
-3. Realize a limpeza dos containers criados: `docker compose down --volumes --remove-orphans`
-4. Inicialize o docker compose: `docker compose up -d`
-
+---
+## Considerações
+???
