@@ -3,7 +3,7 @@
 Este repositório armazena um pequeno projeto para uma entrevista de analise de dados.
 
 A proposta é bem simples:
-![image](./_assets/image/tarefa.png)
+![image](_assets/image/tarefa.png)
 
 - Realizar a migração dos dados entre SOURCE e TARGET
 - Utilizar Docker no Projeto
