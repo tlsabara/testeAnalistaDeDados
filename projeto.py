@@ -3,7 +3,6 @@ import platform
 import argparse
 import os
 from pathlib import Path
-from dotenv import load_dotenv
 
 
 def docker_cmd_windows_start() -> bool:
@@ -45,7 +44,6 @@ def docker_cmd_linux_stop() -> bool:
 if __name__ == '__main__':
     op_sys = platform.system()
 
-    load_dotenv()
     ROOT_DIR = Path(os.path.abspath(os.path.curdir))
 
 
