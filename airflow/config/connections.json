@@ -1,0 +1,22 @@
+{
+  "source_db_server__postgres": {
+    "conn_type": "postgres",
+    "description": "",
+    "login": "postgres",
+    "password": "senhasourcedb",
+    "host": "postgres_source_server",
+    "port": null,
+    "schema": "postgres",
+    "extra": "{}"
+  },
+  "url_test": {
+    "conn_type": "http",
+    "description": "",
+    "login": "",
+    "password": null,
+    "host": "https://randomuser.me/",
+    "port": null,
+    "schema": "",
+    "extra": ""
+  }
+}
