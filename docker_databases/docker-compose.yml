@@ -12,7 +12,7 @@ services:
       - "10000:5432"
     volumes:
       - ./data_src:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init_src.sql:/docker-entrypoint-initdb.d/init_src.sql
     networks:
       - test_analist
 
@@ -27,6 +27,7 @@ services:
       - "11000:5432"
     volumes:
       - ./data_trg:/var/lib/postgresql/data
+      - ./init_target.sql:/docker-entrypoint-initdb.d/init_src.sql
     networks:
       - test_analist
 
