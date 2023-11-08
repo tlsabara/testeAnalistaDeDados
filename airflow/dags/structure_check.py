@@ -29,3 +29,9 @@ with DAG(
         postgres_conn_id="source_db_server__postgres"
     )
 
+    destination_connection = PostgresOperator(
+        task_id="check_target_server",
+        sql="SELECT * FROM"
+    )
+
+
