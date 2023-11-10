@@ -9,6 +9,16 @@
     "schema": "postgres",
     "extra": "{}"
   },
+  "target_db_server__postgres": {
+    "conn_type": "postgres",
+    "description": "",
+    "login": "postgres",
+    "password": "senhatargetdb",
+    "host": "postgres_target_server",
+    "port": null,
+    "schema": "postgres",
+    "extra": "{}"
+  },
   "url_test": {
     "conn_type": "http",
     "description": "",
