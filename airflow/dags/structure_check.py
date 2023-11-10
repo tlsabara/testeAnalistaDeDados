@@ -31,7 +31,8 @@ with DAG(
 
     destination_connection = PostgresOperator(
         task_id="check_target_server",
-        sql="SELECT * FROM"
+        sql="select * from pg_catalog.pg_database",
+        postgres_conn_id="target_db_server__postgres"
     )
 
-
+    source_connection >> destination_connection
