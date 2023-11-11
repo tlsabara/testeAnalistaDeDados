@@ -4,7 +4,7 @@ Aqui está apenas o código de execução, a explicação foi feita no notebook 
 Arquivo: desenvolvimento_analise.ipynb
 """
 
-def run():
+def run_analysis():
     import pandas as pd
     from sqlalchemy import create_engine
 
@@ -32,4 +32,4 @@ def run():
     df_q4.to_sql("q4__media_diaria",target_engine, index=False )
 
 if __name__ == '__main__':
-    run()
+    run_analysis()

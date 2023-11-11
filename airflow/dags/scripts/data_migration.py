@@ -5,6 +5,7 @@ criamos um dataframe e o enviamos ao banco de destino.
 """
 
 def run_data_migration():
+    import datetime
     import pandas as pd
     from sqlalchemy import create_engine
 
@@ -15,7 +16,9 @@ def run_data_migration():
     target_engine = create_engine(url_db_target)
 
     src_sql = "SELECT * FROM t_ponto"
-    pd.read_sql(src_sql, src_engine).to_sql("t_ponto_migration",target_engine, index=False )
+    df = pd.read_sql(src_sql, src_engine)
+    df["etl_date"] = datetime.now()
+    df.to_sql("t_ponto_migration",target_engine, index=False )
 
 if __name__ == '__main__':
     run_data_migration()
