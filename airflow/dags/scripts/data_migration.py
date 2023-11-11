@@ -5,7 +5,7 @@ criamos um dataframe e o enviamos ao banco de destino.
 """
 
 def run_data_migration():
-    import datetime
+    from datetime import datetime
     import pandas as pd
     from sqlalchemy import create_engine
 
