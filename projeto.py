@@ -4,41 +4,42 @@ import argparse
 import os
 from pathlib import Path
 
+def protected(fn: callable) -> callable:
 
+    def inner(*args, **kwargs):
+        try:
+            return fn(*args,**kwargs)
+        except Exception as e:
+            print("Erro ao executar.")
+            return False
+    return inner
+
+@protected
 def docker_cmd_windows_start() -> bool:
-    try:
-        os.system('cmd /c "cd ./docker_databases; docker compose up -d; exit"')
-        os.system('cmd /c "cd ./airflow; docker compose up -d; exit"')
-        return True
-    except Exception as e:
-        return False
+    os.system('cmd /c "cd ./docker_databases; docker compose up -d; exit"')
+    os.system('cmd /c "cd ./airflow; docker compose up -d; exit"')
+    return True
 
-
+@protected
 def docker_cmd_windows_stop() -> bool:
-    try:
-        os.system('cmd /c "cd ./docker_databases; docker compose down; exit"')
-        os.system('cmd /c "cd ./airflow; docker compose down; exit"')
-        return True
-    except Exception as e:
-        return False
+    os.system('cmd /c "cd ./docker_databases; docker compose down; exit"')
+    os.system('cmd /c "cd ./airflow; docker compose down; exit"')
+    return True
 
 
+@protected
 def docker_cmd_linux_start() -> bool:
-    try:
-        os.system('cd ./docker_databases && sudo docker compose up -d')
-        os.system('cd ./airflow && sudo docker compose up -d')
-        return True
-    except Exception as e:
-        return False
+    os.system('cd ./docker_databases && sudo docker compose up -d')
+    os.system('cd ./airflow && sudo docker compose up -d')
+    return True
 
 
+@protected
 def docker_cmd_linux_stop() -> bool:
-    try:
-        os.system('cd ./docker_databases && sudo docker compose down')
-        os.system('cd ./airflow && sudo docker compose down')
-        return True
-    except Exception as e:
-        return False
+    os.system('cd ./docker_databases && sudo docker compose down')
+    os.system('cd ./airflow && sudo docker compose down')
+    return True
+
 
 
 if __name__ == '__main__':
