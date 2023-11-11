@@ -25,13 +25,15 @@ A proposta é bem simples:
 ---
 ## Minha Solução
 ### Jujpyter - Faker - Mock Data
-???
+o arquivo mock_data.ipynb dentro da pasta scripts, foi usado para criar os dados mockados.
+Utilizei a lib faker para gerar os emails e cnpj.
+Também implemente de forma a garantir que um mesmo usuário pertencesse sempre a uma mesma empresa.
 
 ### PostgreSQL - Origem
-???
+Rodando no docker com script de inicialização contendo os dados criados anteriomente.
 
 ### PostgreSQL - Destino
-???
+Também rodando no docker 
 
 ### Airflow
 ????

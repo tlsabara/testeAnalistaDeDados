@@ -19,4 +19,6 @@ Apenas uma instancia de vazia.
   - `database: postgres`
 
 ---
-ps: São 10.000 linhas então a inicialização do container pode demorar uns 3-5 min.
+ps: 
+- São 50.000 linhas no banco de origem então a inicialização do container pode demorar uns 3-5 min.
+- Caso consider o volume de 50k baixo, pode renomear o arquivo `init_src_500k.sql` para `init_src.sql`, que o container iniciará com 500K linhas(demora 10-15min na incialização)
