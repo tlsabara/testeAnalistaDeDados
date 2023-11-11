@@ -4,43 +4,12 @@ import argparse
 import os
 from pathlib import Path
 
-def protected(fn: callable) -> callable:
-
-    def inner(*args, **kwargs):
-        try:
-            return fn(*args,**kwargs)
-        except Exception as e:
-            print("Erro ao executar.")
-            return False
-    return inner
-
-@protected
-def docker_cmd_windows_start() -> bool:
-    os.system('cmd /c "cd ./docker_databases; docker compose up -d; exit"')
-    os.system('cmd /c "cd ./airflow; docker compose up -d; exit"')
-    return True
-
-@protected
-def docker_cmd_windows_stop() -> bool:
-    os.system('cmd /c "cd ./docker_databases; docker compose down; exit"')
-    os.system('cmd /c "cd ./airflow; docker compose down; exit"')
-    return True
-
-
-@protected
-def docker_cmd_linux_start() -> bool:
-    os.system('cd ./docker_databases && sudo docker compose up -d')
-    os.system('cd ./airflow && sudo docker compose up -d')
-    return True
-
-
-@protected
-def docker_cmd_linux_stop() -> bool:
-    os.system('cd ./docker_databases && sudo docker compose down')
-    os.system('cd ./airflow && sudo docker compose down')
-    return True
-
-
+from core_projeto.commands import (
+    docker_cmd_windows_start,
+    docker_cmd_windows_stop,
+    docker_cmd_linux_start,
+    docker_cmd_linux_stop
+)
 
 if __name__ == '__main__':
     op_sys = platform.system()

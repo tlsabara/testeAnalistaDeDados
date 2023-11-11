@@ -1,22 +1,22 @@
 {
   "source_db_server__postgres": {
     "conn_type": "postgres",
-    "description": "",
+    "description": "Conex\u00e3o com o banco de dados de Origem.\r\nPorta em acesso normal por estar no docker",
     "login": "postgres",
     "password": "senhasourcedb",
     "host": "postgres_source_server",
     "port": null,
-    "schema": "postgres",
+    "schema": "sourcedb",
     "extra": "{}"
   },
   "target_db_server__postgres": {
     "conn_type": "postgres",
-    "description": "",
+    "description": "Conex\u00e3o com o banco de dados de Destino.\r\nPorta em acesso normal por estar no docker.",
     "login": "postgres",
     "password": "senhatargetdb",
     "host": "postgres_target_server",
     "port": null,
-    "schema": "postgres",
+    "schema": "targetdb",
     "extra": "{}"
   },
   "url_test": {
