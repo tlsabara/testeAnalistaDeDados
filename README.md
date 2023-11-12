@@ -36,7 +36,8 @@ Rodando no docker com script de inicialização contendo os dados criados anteri
 Também rodando no docker 
 
 ### Airflow
-????
+Airflow é o gerenciador de pipelines do projeto.
+No caso foi utilizado 03 dags para atender os requisitos.
 
 ---
 ## Executando o projeto
@@ -62,6 +63,7 @@ Este arquivo foi criado para facilitar a execução do projeto.
    Porta: 10000
    Usuário: postgres
    Senha: senhasourcedb
+   Database: sourcedb
    ```
    - Para acessar o banco de dados de DESTINO:
    ```shell
@@ -69,10 +71,10 @@ Este arquivo foi criado para facilitar a execução do projeto.
    Porta: 11000
    Usuário: postgres
    Senha: senhatargetdb
+   Database: targetdb
    ```
 3. Parando o projeto:
    - Após avaliar o projeto execute: ``
 
 ---
 ## Considerações
-???
