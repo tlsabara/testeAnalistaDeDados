@@ -18,7 +18,7 @@ def run_data_migration():
     src_sql = "SELECT * FROM t_ponto"
     df = pd.read_sql(src_sql, src_engine)
     df["etl_date"] = datetime.now()
-    df.to_sql("t_ponto_migration",target_engine, index=False )
+    df.to_sql("t_ponto_migration",target_engine, index=False, if_exists="replace")
 
 if __name__ == '__main__':
     run_data_migration()
