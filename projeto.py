@@ -1,21 +1,10 @@
 #!/usr/bin/python
-import platform
-import argparse
-import os
-from pathlib import Path
 
-from core_projeto.commands import (
-    docker_cmd_windows_start,
-    docker_cmd_windows_stop,
-    docker_cmd_linux_start,
-    docker_cmd_linux_stop
-)
+import argparse
+from core_projeto.commands import create_commander
 
 if __name__ == '__main__':
-    op_sys = platform.system()
-
-    ROOT_DIR = Path(os.path.abspath(os.path.curdir))
-
+    cmd_ = create_commander()
 
     parser = argparse.ArgumentParser()
 
@@ -45,23 +34,17 @@ if __name__ == '__main__':
         input()
 
     if args.configurar:
-        file = ROOT_DIR / "airflow" / ".env"
-        email_inform = input("Digite o email para receber os informativos:")
-        with open(file, "w") as fl:
-            fl.write("AIRFLOW_UID=1000\n")
-            fl.write(f"TARGET_MAIL={email_inform}")
+        cmd_.configure_env()
+        cmd_.init_airflow_cmd()
 
+    if args.iniciar and args.parar:
+        print("--iniciar e --parar não podem ser uitilizados juntamente")
+        exit()
 
     if args.iniciar and not args.parar:
-        if op_sys == "Linux":
-            docker_cmd_linux_start()
-        if op_sys == "Wndows":
-            docker_cmd_windows_start()
+        cmd_.start_cmd()
 
     if args.parar and not args.iniciar:
-        if op_sys == "Linux":
-            docker_cmd_linux_stop()
-        if op_sys == "Wndows":
-            docker_cmd_windows_stop()
+        cmd_.stop_cmd()
 
     exit()
