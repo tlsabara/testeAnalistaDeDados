@@ -20,7 +20,7 @@ dag_args = {
 with DAG(
     "0003_analysis_dag",
     default_args=dag_args,
-    start_date=datetime(2023, 11, 1),
+    start_date=datetime(2024, 1, 18),
     schedule_interval=None,
     catchup=False
 ) as dag:

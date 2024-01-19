@@ -19,7 +19,7 @@ dag_args = {
 
 with DAG(
     "0002_data_migration",
-    start_date=datetime(2023, 11, 11),
+    start_date=datetime(2024, 1, 18),
     schedule_interval=None,
     default_args=dag_args,
     catchup=False

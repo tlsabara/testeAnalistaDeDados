@@ -3,7 +3,6 @@ services:
 
   # Este é o banco de dados SOURCE com os dados mockados
   postgres_source_server:
-
     restart: always
     image: postgres:15-alpine
     environment:

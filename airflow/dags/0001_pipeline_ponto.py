@@ -1,3 +1,5 @@
+import os
+
 from airflow import DAG
 from datetime import datetime, timedelta
 
@@ -9,7 +11,7 @@ dag_args = {
     "owner": "airflow",
     "email_on_failure": False,
     "email_on_retry": False,
-    "email": "thi.sil.sab@gmail.com",
+    "email": os.environ.get("TARGET_MAIL", "teste@teste.com.br"),
     "retries": 2,
     "retry_delay": timedelta(minutes=10)
 }
@@ -18,7 +20,7 @@ description = "DAG para avaliar o status dos servidores e tabelas antes de execu
 
 with DAG(
     dag_id="0001_pipeline_ponto",
-    start_date=datetime(2023, 11, 2),
+    start_date=datetime(2024, 1, 18),
     schedule_interval="0 0 * * *",
     default_args=dag_args,
     description=description,

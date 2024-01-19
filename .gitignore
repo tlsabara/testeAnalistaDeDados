@@ -3,3 +3,5 @@
 /docker_databases/data_trg/
 **/.ipynb_checkpoints/
 .env
+/.python-version
+/requirements.txt
